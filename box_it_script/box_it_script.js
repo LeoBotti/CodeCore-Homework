@@ -18,3 +18,7 @@ function drawMiddleBorder(num){
     return('┣' + drawLine(num) + '┫');
 }
 
+function drawBottomBorder(num){
+    return('┗' + drawLine(num) + '┛');
+}
+
