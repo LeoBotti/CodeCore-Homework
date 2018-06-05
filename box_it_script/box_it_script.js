@@ -1,5 +1,4 @@
 const args = process.argv.slice(2);
-const x = args[0];
 
 function drawLine(num){
     let line = "";
@@ -26,3 +25,6 @@ function drawBarsAround(str){
     return('┃' + str + '┃');
 }
 
+function boxIt(arr){
+    
+}
