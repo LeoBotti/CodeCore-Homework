@@ -10,3 +10,7 @@ function drawLine(num){
     return str;
 }
 
+function drawTopBorder(num){
+    return("┏" + drawLine(num) + "┓");
+}
+
