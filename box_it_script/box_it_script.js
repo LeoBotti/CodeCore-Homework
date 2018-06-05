@@ -14,3 +14,7 @@ function drawTopBorder(num){
     return("┏" + drawLine(num) + "┓");
 }
 
+function drawMiddleBorder(num){
+    return('┣' + drawLine(num) + '┫');
+}
+
