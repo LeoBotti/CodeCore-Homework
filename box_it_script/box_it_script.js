@@ -2,9 +2,9 @@ const args = process.argv.slice(2);
 const x = args[0];
 
 function drawLine(num){
-    let str = "";
+    let line = "";
     while(num>0){
-        str += '━';
+        line += '━';
         num -= 1;
     }
     return str;
@@ -20,5 +20,9 @@ function drawMiddleBorder(num){
 
 function drawBottomBorder(num){
     return('┗' + drawLine(num) + '┛');
+}
+
+function drawBarsAround(str){
+    return('┃' + str + '┃');
 }
 
