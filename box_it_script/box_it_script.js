@@ -26,5 +26,11 @@ function drawBarsAround(str){
 }
 
 function boxIt(arr){
-    
+    // Find the longest string in array.
+    let longest = arr[0];
+    for(let name of arr){
+        if(longest.length < name.length){
+            longest = name;
+        }
+    }
 }
