@@ -6,7 +6,7 @@ function drawLine(num){
         line += '━';
         num -= 1;
     }
-    return str;
+    return line;
 }
 
 function drawTopBorder(num){
@@ -26,11 +26,11 @@ function drawBarsAround(str){
 }
 
 function boxIt(arr){
-    // Find the longest string in array.
-    let longest = arr[0];
-    for(let name of arr){
-        if(longest.length < name.length){
-            longest = name;
-        }
-    }
+   if(arr[0] == undefined){
+       return("┏" + "┓\n" + '┗' + '┛');
+   } else {
+       
+   }
 }
+
+console.log(boxIt(args));
