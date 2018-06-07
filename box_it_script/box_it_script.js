@@ -25,12 +25,46 @@ function drawBarsAround(str){
     return('┃' + str + '┃');
 }
 
-function boxIt(arr){
-   if(arr[0] == undefined){
-       return("┏" + "┓\n" + '┗' + '┛');
-   } else {
-       
-   }
+function findLong(arr){
+    let long = arr[0];
+    for(let str of arr){
+        if(long.length < str.length){
+            long = str;
+        }
+    }
+    return long.length;
 }
 
-console.log(boxIt(args));
+function rightSpace(str, n){
+    return str + ' '.repeat(n - str.length);
+}
+
+function addBars(str, n){
+    if(str.length === n){
+        return drawBarsAround(str);
+    } else {
+        return drawBarsAround(rightSpace(str, n))
+    }
+}
+
+function boxIt(arr){
+   if(arr[0] == undefined){
+       console.log(("┏" + "┓\n" + '┗' + '┛'));
+   } else {
+       const long = findLong(arr);
+       console.log(drawTopBorder(long));
+
+       for(let i = 0; i < arr.length; i++){
+           if(i !== arr.length -1){
+               console.log(addBars(arr[i], long));
+               console.log(drawMiddleBorder(long));
+           } else {
+            console.log(addBars(arr[i], long));
+           }
+       }
+
+       console.log(drawBottomBorder(long));
+    }
+}
+
+boxIt(args);
