@@ -14,9 +14,10 @@ class Turtle{
             }
             let i = 0;
             while(i <= step){
-                this.coor[this.x][this.y + i] = '@';
+                this.coor[this.x][this.y + i] = '◉';
                 i++;
             }
+            this.y = this.y + step;
             return this;
         } else
         if(this.hori === false && this.vert === false){
@@ -25,9 +26,10 @@ class Turtle{
             }
             let i = 0;
             while(i <= step){
-               this.coor[this.x][this.y-i] = '@';
+               this.coor[this.x][this.y-i] = '◉';
                i++;
             }
+            this.y = this.y - step;
             return this;
         } else
         if(this.hori === true && this.vert === false){
@@ -39,9 +41,10 @@ class Turtle{
                 if(!this.coor[this.x-i]){
                     this.coor[this.x-i] = [];
                 }
-               this.coor[this.x-i][this.y] = '@';
+               this.coor[this.x-i][this.y] = '◉';
                i++;
             }
+            this.x = this.x - step;
             return this;
         } else
         if(this.hori === false && this.vert === true){
@@ -53,9 +56,10 @@ class Turtle{
                 if(!this.coor[this.x+i]){
                     this.coor[this.x+i] = [];
                 }
-               this.coor[this.x+i][this.y] = '@';
+               this.coor[this.x+i][this.y] = '◉';
                i++;
             }
+            this.x = this.x + step;
             return this;
         }
     }
@@ -109,7 +113,7 @@ class Turtle{
                     this.coor[i][j] = ' ';
                 }
             }
-            console.log(this.coor[i]);
+            console.log(this.coor[i].toString());
         }
     }
 }
