@@ -14,7 +14,7 @@ class Turtle{
             }
             let i = 0;
             while(i <= step){
-                this.coor[this.x][this.y + i] = '◉';
+                this.coor[this.x][this.y + i] = '•';
                 i++;
             }
             this.y = this.y + step;
@@ -26,7 +26,7 @@ class Turtle{
             }
             let i = 0;
             while(i <= step){
-               this.coor[this.x][this.y-i] = '◉';
+               this.coor[this.x][this.y-i] = '•';
                i++;
             }
             this.y = this.y - step;
@@ -41,7 +41,7 @@ class Turtle{
                 if(!this.coor[this.x-i]){
                     this.coor[this.x-i] = [];
                 }
-               this.coor[this.x-i][this.y] = '◉';
+               this.coor[this.x-i][this.y] = '•';
                i++;
             }
             this.x = this.x - step;
@@ -56,7 +56,7 @@ class Turtle{
                 if(!this.coor[this.x+i]){
                     this.coor[this.x+i] = [];
                 }
-               this.coor[this.x+i][this.y] = '◉';
+               this.coor[this.x+i][this.y] = '•';
                i++;
             }
             this.x = this.x + step;
@@ -108,12 +108,14 @@ class Turtle{
 
     print(){
         for(let i = 0; i < this.coor.length; i++){
+            let out = "";
             for(let j = 0; j < this.coor[i].length; j++){
                 if(!this.coor[i][j]){
                     this.coor[i][j] = ' ';
                 }
+                out = out + this.coor[i][j];
             }
-            console.log(this.coor[i].toString());
+            console.log(out);
         }
     }
 }
