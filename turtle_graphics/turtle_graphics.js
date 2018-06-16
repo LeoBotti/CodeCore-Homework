@@ -26,10 +26,26 @@ class Turtle{
             }
             let i = 0;
             while(i <= step){
-               this.coor[this.x][this.y-i] = '•';
+
+
+                if(this.y-i < 0){
+                    for(let k = 0; k < this.coor.length; k++){
+                        this.coor[k].unshift("");
+                    }
+                    this.coor[this.x][0] = '•';
+                } 
+                
+
+                else{
+                    this.coor[this.x][this.y-i] = '•';
+                }
                i++;
             }
-            this.y = this.y - step;
+            if(this.y - step <0){
+                this.y = 0;
+            } else{
+                this.y = this.y - step;
+            }
             return this;
         } else
         if(this.hori === true && this.vert === false){
@@ -38,11 +54,12 @@ class Turtle{
                 if(this.x-i < 0){
                     this.coor.unshift([]);
                     this.coor[0][this.y] = '•';
-                } else
+                } else{
                 if(!this.coor[this.x-i]){
                     this.coor[this.x-i] = [];
-                    this.coor[this.x-i][this.y] = '•';
                 }
+                this.coor[this.x-i][this.y] = '•';
+            }
                i++;
             }
             if(this.x - step < 0){
