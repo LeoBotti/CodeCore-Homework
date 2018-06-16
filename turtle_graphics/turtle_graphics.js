@@ -35,13 +35,21 @@ class Turtle{
         if(this.hori === true && this.vert === false){
             let i = 0;
             while(i <= step){
+                if(this.x-i < 0){
+                    this.coor.unshift([]);
+                    this.coor[0][this.y] = '•';
+                } else
                 if(!this.coor[this.x-i]){
                     this.coor[this.x-i] = [];
+                    this.coor[this.x-i][this.y] = '•';
                 }
-               this.coor[this.x-i][this.y] = '•';
                i++;
             }
-            this.x = this.x - step;
+            if(this.x - step < 0){
+                this.x = 0;
+            } else {
+                this.x = this.x - step;
+            }
             return this;
         } else
         if(this.hori === false && this.vert === true){
@@ -95,10 +103,6 @@ class Turtle{
             return this;
         }
     }
-
-    // allPoints(){
-
-    // }
 
     print(){
         for(let i = 0; i < this.coor.length; i++){
