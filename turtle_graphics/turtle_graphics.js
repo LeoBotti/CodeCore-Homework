@@ -33,9 +33,6 @@ class Turtle{
             return this;
         } else
         if(this.hori === true && this.vert === false){
-            if(!this.coor[this.x]){
-                this.coor[this.x] = [];
-            }
             let i = 0;
             while(i <= step){
                 if(!this.coor[this.x-i]){
@@ -48,9 +45,6 @@ class Turtle{
             return this;
         } else
         if(this.hori === false && this.vert === true){
-            if(!this.coor[this.x]){
-                this.coor[this.x] = [];
-            }
             let i = 0;
             while(i <= step){
                 if(!this.coor[this.x+i]){
