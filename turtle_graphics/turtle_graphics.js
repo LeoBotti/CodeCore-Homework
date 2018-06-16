@@ -26,16 +26,12 @@ class Turtle{
             }
             let i = 0;
             while(i <= step){
-
-
                 if(this.y-i < 0){
                     for(let k = 0; k < this.coor.length; k++){
                         this.coor[k].unshift("");
                     }
                     this.coor[this.x][0] = '•';
                 } 
-                
-
                 else{
                     this.coor[this.x][this.y-i] = '•';
                 }
