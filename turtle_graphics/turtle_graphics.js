@@ -109,6 +109,9 @@ class Turtle{
     print(){
         for(let i = 0; i < this.coor.length; i++){
             let out = "";
+            if(!this.coor[i]){
+                this.coor[i] = [' '];
+            }
             for(let j = 0; j < this.coor[i].length; j++){
                 if(!this.coor[i][j]){
                     this.coor[i][j] = ' ';
