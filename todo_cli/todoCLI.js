@@ -5,7 +5,7 @@ const rl = readline.createInterface({
 });
 
 const view = require("./view.js");
-// const n = require("./new.js");
+const n = require("./new.js");
 // const complete = require("./complete.js");
 // const del = require("./delete.js");
 
@@ -19,8 +19,8 @@ const todoMenu = () => {
     switch (input.slice(0,1).toLowerCase()) {
       case 'v': view(todoMenu);
         break;
-      // case 'n': n(); setTimeout(() => todoMenu(), 500);
-        // break;
+      case 'n': n(rl, todoMenu);
+        break;
       // case 'c': complete(input.slice(1 - input.length)); setTimeout(() => todoMenu(), 500
         // break;
       // case 'd': del(input.slice(1 - input.length)); setTimeout(() => todoMenu(), 500
