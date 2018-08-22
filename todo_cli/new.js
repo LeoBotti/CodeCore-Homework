@@ -1,6 +1,4 @@
-const fs = require("fs");
-
-const n = (rl, fn) => {
+const n = (fs, rl, fn) => {
   rl.question('What?\n> ', input => {
     if(!input){
       console.log('Input cannot be empty. Try again.'); n();
@@ -13,7 +11,7 @@ const n = (rl, fn) => {
             if (err) throw err;
           });
         } else {
-          fs.appendFile("todo.csv", `${index} [ ] ${input}`, err => {
+          fs.appendFile("todo.csv", `0 [ ] ${input}`, err => {
             if (err) throw err;
           });
         }

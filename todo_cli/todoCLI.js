@@ -1,3 +1,4 @@
+const fs = require("fs");
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
@@ -17,12 +18,12 @@ console.log('--------------------');
 const todoMenu = () => {
   rl.question(menu, input => {
     switch (input.slice(0,1).toLowerCase()) {
-      case 'v': view(todoMenu);
+      case 'v': view(fs, todoMenu);
         break;
-      case 'n': n(rl, todoMenu);
+      case 'n': n(fs, rl, todoMenu);
         break;
-      // case 'c': complete(input.slice(1 - input.length)); setTimeout(() => todoMenu(), 500
-        // break;
+      case 'c': complete(fs, input.slice(1 - input.length), todoMenu);
+        break;
       // case 'd': del(input.slice(1 - input.length)); setTimeout(() => todoMenu(), 500
         // break;
       case 'q': console.log('See you soon! 😄'); rl.close();
