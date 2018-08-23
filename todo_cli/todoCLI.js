@@ -7,7 +7,7 @@ const rl = readline.createInterface({
 
 const view = require("./view.js");
 const n = require("./new.js");
-// const complete = require("./complete.js");
+const complete = require("./complete.js");
 // const del = require("./delete.js");
 
 const menu = '(v) View • (n) New • (cX) Complete • (dX) Delete • (q) Quit\n> ';
