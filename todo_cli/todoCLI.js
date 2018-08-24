@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 const view = require("./view.js");
 const n = require("./new.js");
 const complete = require("./complete.js");
-// const del = require("./delete.js");
+const del = require("./delete.js");
 
 const menu = '(v) View • (n) New • (cX) Complete • (dX) Delete • (q) Quit\n> ';
 
@@ -24,8 +24,8 @@ const todoMenu = () => {
         break;
       case 'c': complete(fs, input.slice(1 - input.length), todoMenu);
         break;
-      // case 'd': del(input.slice(1 - input.length)); setTimeout(() => todoMenu(), 500
-        // break;
+      case 'd': del(fs, input.slice(1 - input.length), todoMenu); 
+        break;
       case 'q': console.log('See you soon! 😄'); rl.close();
         break;
       default: console.log('Invalid input. Try again.\n'); todoMenu();

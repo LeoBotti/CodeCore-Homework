@@ -1,4 +1,4 @@
-const complete = (fs, num, fn) => {
+const del = (fs, num, fn) => {
   const x = +num;
   if(!Number.isInteger(+x)){
     console.log("\nMust enter list number in command to specify the item...\n");
@@ -13,11 +13,18 @@ const complete = (fs, num, fn) => {
         fn();
       } else {
         const task = todo[x];
-        todo[x] = task.replace("[ ]", "[✓]");
+        todo.splice(x, 1);
+
+        for(let i = x; i < todo.length; i++){
+          let temp = todo[i].split(" [");
+          temp.shift();
+          temp.unshift(`${i} [`);
+          todo[i] = temp.join("");
+        }
   
         fs.writeFile("todo.csv", todo.join("\n"), err => {
           if (err) throw err;
-          console.log(`\nCompleted "${task.split("] ")[1]}"\n`);
+          console.log(`\nDeleted "${task.split("] ")[1]}"\n`);
           fn();
         });
       }
@@ -25,4 +32,4 @@ const complete = (fs, num, fn) => {
   }
 }
 
-module.exports = complete;
+module.exports = del;

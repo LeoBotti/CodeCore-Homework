@@ -1,5 +1,5 @@
 const n = (fs, rl, fn) => {
-  rl.question('What?\n> ', input => {
+  rl.question('\nWhat?\n> ', input => {
     if(!input){
       console.log('Input cannot be empty. Try again.'); n();
     } else {
@@ -15,9 +15,10 @@ const n = (fs, rl, fn) => {
             if (err) throw err;
           });
         }
+        console.log("");
+        fn();
       });
     }
-    fn();
   })
 }
 
